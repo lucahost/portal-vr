@@ -14,6 +14,10 @@ Our game project for the course GameDev (HS 21/22)
 
 ## [Design](./docs/40_design.md)
 
+## [Development](./docs/50_development.md)
+
+## [Test](docs/60_test.md)
+
 ## [Links](./docs/90_links.md)
 
 ## [Todo / Tasks](./docs/99_todo.md)
