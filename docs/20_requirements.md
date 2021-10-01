@@ -60,7 +60,7 @@ This is all about starting a new game and ending the app / game
 |        **Classification** | **_functional_**, **_must_** |
 |                **Effort** | **_medium_**                 |
 
-#### REQ-11 - Shoot a portal
+#### REQ-11 - Shoot a blue portal
 
 |                           |                              |
 | ------------------------: | :--------------------------- |
@@ -73,7 +73,20 @@ This is all about starting a new game and ending the app / game
 |        **Classification** | **_functional_**, **_must_** |
 |                **Effort** | **_medium_**                 |
 
-#### REQ-12 - Walk through a portal
+#### REQ-12 - Shoot a orange portal
+
+|                           |                              |
+| ------------------------: | :--------------------------- |
+|                **Target** |                              |
+|                **Result** |                              |
+|          **Precondition** |                              |
+|               **Process** |                              |
+| **Postcondition Success** |                              |
+|   **Postcondition Error** |                              |
+|        **Classification** | **_functional_**, **_must_** |
+|                **Effort** | **_medium_**                 |
+
+#### REQ-13 - Walk through a portal
 
 |                           |                              |
 | ------------------------: | :--------------------------- |
@@ -86,7 +99,7 @@ This is all about starting a new game and ending the app / game
 |        **Classification** | **_functional_**, **_must_** |
 |                **Effort** | **_hard_**                   |
 
-#### REQ-13 - Ending a level
+#### REQ-14 - Ending a level
 
 |                           |                              |
 | ------------------------: | :--------------------------- |
