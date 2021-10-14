@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe70aba2e7074048aca5de573b64a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SimpleSelectedItems:
+    m_Keys:
+    - Assets/ExampleAssets.meta
+    - Assets/ExampleAssets/Materials.meta
+    - Assets/ExampleAssets/Materials/Controller.mat
+    - Assets/ExampleAssets/Materials/Controller.mat.meta
+    - Assets/ExampleAssets/Materials/Grid.mat
+    - Assets/ExampleAssets/Materials/Grid.mat.meta
+    - Assets/ExampleAssets/Materials/Skybox Light.mat
+    - Assets/ExampleAssets/Materials/Skybox Light.mat.meta
+    - Assets/ExampleAssets/Models.meta
+    - Assets/ExampleAssets/Models/XRControllerLeft.fbx
+    - Assets/ExampleAssets/Models/XRControllerLeft.fbx.meta
+    - Assets/ExampleAssets/Models/XRControllerRight.fbx
+    - Assets/ExampleAssets/Models/XRControllerRight.fbx.meta
+    - Assets/ExampleAssets/Prefabs.meta
+    - Assets/ExampleAssets/Prefabs/XRControllerLeft.prefab
+    - Assets/ExampleAssets/Prefabs/XRControllerLeft.prefab.meta
+    - Assets/ExampleAssets/Prefabs/XRControllerRight.prefab
+    - Assets/ExampleAssets/Prefabs/XRControllerRight.prefab.meta
+    - Assets/ExampleAssets/Textures.meta
+    - Assets/ExampleAssets/Textures/Grid_Light_512x512.png
+    - Assets/ExampleAssets/Textures/Grid_Light_512x512.png.meta
+    - Assets/ExampleAssets/Tutorial.meta
+    - Assets/ExampleAssets/Tutorial/Images.meta
+    - Assets/ExampleAssets/Tutorial/Images/1-welcome-screen-image.png
+    - Assets/ExampleAssets/Tutorial/Images/1-welcome-screen-image.png.meta
+    - Assets/ExampleAssets/Tutorial/Images/project-header-vr.png
+    - Assets/ExampleAssets/Tutorial/Images/project-header-vr.png.meta
+    - Assets/ExampleAssets/Tutorial/VRTutorialContainer.asset
+    - Assets/ExampleAssets/Tutorial/VRTutorialContainer.asset.meta
+    - Assets/ExampleAssets/Tutorial/VRTutorialProjectSettings.asset
+    - Assets/ExampleAssets/Tutorial/VRTutorialProjectSettings.asset.meta
+    - Assets/ExampleAssets/Tutorial/VRTutorialStyle.asset
+    - Assets/ExampleAssets/Tutorial/VRTutorialStyle.asset.meta
+    - Assets/ExampleAssets/Tutorial/VRTutorialWelcomePage.asset
+    - Assets/ExampleAssets/Tutorial/VRTutorialWelcomePage.asset.meta
+    - Assets/PortalAssets.meta
+    - Assets/PortalAssets/portal_blue.png
+    - Assets/PortalAssets/portal_blue.png.meta
+    - Assets/PortalAssets/portal_orange.png
+    - Assets/PortalAssets/portal_orange.png.meta
+    - Assets/Scenes.meta
+    - Assets/Scenes/FirstScene.unity
+    - Assets/Scenes/FirstScene.unity.meta
+    - Assets/Scenes/FirstSceneSettings.lighting
+    - Assets/Scenes/FirstSceneSettings.lighting.meta
+    - Assets/Scenes/MenuScene.unity
+    - Assets/Scenes/MenuScene.unity.meta
+    - Assets/XR.meta
+    - Assets/XR/Loaders.meta
+    - Assets/XR/Loaders/Oculus Loader.asset
+    - Assets/XR/Loaders/Oculus Loader.asset.meta
+    - Assets/XR/Loaders/Windows MR Loader.asset
+    - Assets/XR/Loaders/Windows MR Loader.asset.meta
+    - Assets/XR/Settings.meta
+    - Assets/XR/Settings/Oculus Settings.asset
+    - Assets/XR/Settings/Oculus Settings.asset.meta
+    - Assets/XR/Settings/Windows MR Package Settings.asset
+    - Assets/XR/Settings/Windows MR Package Settings.asset.meta
+    - Assets/XR/XRGeneralSettings.asset
+    - Assets/XR/XRGeneralSettings.asset.meta
+    - 
+    m_Values: 01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+  RevisionSummary: 
+  ChangesSearchValue: 
+  SelectedHistoryRevision: 
+  HistoryPageNumber: 0
+  TabIndex: 0
