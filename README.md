@@ -18,6 +18,8 @@ Our game project for the course GameDev (HS 21/22)
 
 ## [Test](docs/60_test.md)
 
+## [Sketches](docs/70_sketches.md)
+
 ## [Links](./docs/90_links.md)
 
 ## [Todo / Tasks](./docs/99_todo.md)
