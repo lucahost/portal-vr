@@ -48,13 +48,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7448815bd5148434682b3d931066cd10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RigBaseGameObject: {fileID: 4414000315789495850}
+  m_Camera: {fileID: 0}
+  m_OriginBaseGameObject: {fileID: 4414000315789495850}
   m_CameraFloorOffsetObject: {fileID: 4414000316644415596}
-  m_CameraGameObject: {fileID: 4414000316009520796}
   m_RequestedTrackingOriginMode: 0
   m_CameraYOffset: 1.36144
-  m_TrackingSpace: 3
-  m_TrackingOriginMode: -2147483648
+  m_CameraGameObject: {fileID: 4414000316009520796}
 --- !u!114 &4414000315789495853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,6 +278,11 @@ PrefabInstance:
     - target: {fileID: 8919667392703362906, guid: 10f82aeaa4e333a42a6052a21cd6c7ff,
         type: 3}
       propertyPath: m_XRRig
+      value: 
+      objectReference: {fileID: 4414000315789495852}
+    - target: {fileID: 8919667392703362906, guid: 10f82aeaa4e333a42a6052a21cd6c7ff,
+        type: 3}
+      propertyPath: m_XROrigin
       value: 
       objectReference: {fileID: 4414000315789495852}
     - target: {fileID: 8919667392703362908, guid: 10f82aeaa4e333a42a6052a21cd6c7ff,

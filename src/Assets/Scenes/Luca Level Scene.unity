@@ -622,6 +622,9 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  m_InteractionLayers:
+    m_Bits: 4294967295
+  m_SelectMode: 0
   m_CustomReticle: {fileID: 8656087483511947524, guid: d092fea12dd2cf640a756a852f47e787,
     type: 3}
   m_FirstHoverEntered:
@@ -634,6 +637,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
     m_PersistentCalls:
       m_Calls: []
   m_SelectEntered:
@@ -678,6 +687,9 @@ MonoBehaviour:
   m_TeleportationProvider: {fileID: 1559056765}
   m_MatchOrientation: 0
   m_TeleportTrigger: 0
+  m_Teleporting:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!64 &2061114429
 MeshCollider:
   m_ObjectHideFlags: 0
