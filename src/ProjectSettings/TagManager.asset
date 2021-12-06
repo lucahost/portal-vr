@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ignite
+  - Orange Portal
+  - Beam
+  - Blue Portal
   layers:
   - Default
   - TransparentFX
@@ -12,13 +15,13 @@ TagManager:
   - Hats
   - Water
   - UI
-  - 
+  - Player
   - 
   - Grabbable
   - Hands
   - Teleporter
   - NoHandCollide
-  - 
+  - Teleporting
   - 
   - 
   - 
