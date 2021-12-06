@@ -665,7 +665,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftUILineRenderer: {fileID: 1528096936846469232}
   RightUILineRenderer: {fileID: 1528096936846469232}
+  startObject: {fileID: 0}
   resetPosition: {x: 0, y: 0, z: 0}
+  resetRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &5764232212067083322
 GameObject:
   m_ObjectHideFlags: 0
