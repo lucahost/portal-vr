@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4414000315789495853}
   - component: {fileID: 4414000315789495855}
   - component: {fileID: 4414000315789495854}
+  - component: {fileID: 1380073731550782969}
   m_Layer: 0
   m_Name: XR Rig
   m_TagString: Untagged
@@ -96,6 +97,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &1380073731550782969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4414000315789495850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fbbf320abc9e964dae999214fe70814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisableSetupForDebug: 0
+  StartingPosition: {fileID: 0}
+  TeleporterParent: {fileID: 0}
+  RightTeleportInteractor: {fileID: 0}
+  LeftTeleportInteractor: {fileID: 0}
+  RightDirectInteractor: {fileID: 0}
+  LeftDirectInteractor: {fileID: 0}
+  RightTractorBeam: {fileID: 0}
+  LeftTractorBeam: {fileID: 0}
 --- !u!1001 &979128502096096462
 PrefabInstance:
   m_ObjectHideFlags: 0

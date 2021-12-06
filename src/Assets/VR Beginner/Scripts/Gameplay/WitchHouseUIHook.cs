@@ -11,12 +11,28 @@ public class WitchHouseUIHook : WatchScript.IUIHook
 {
     public GameObject LeftUILineRenderer;
     public GameObject RightUILineRenderer;
-    
+    public GameObject startObject;
+    public Vector3 resetPosition;
+    public Quaternion resetRotation;
+
+    void Start()
+    {
+        startObject = GameObject.Find("XR Rig");
+        resetPosition = startObject.GetComponent<Transform>().position;
+        resetRotation = startObject.GetComponent<Transform>().rotation;
+    }
+
     public override void GetHook(WatchScript watch)
     {
-        watch.AddButton("Reset", () => { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); });
-        watch.AddButton("Unlock Teleporters", () => {MasterController.Instance.TeleporterParent.SetActive(true);});
-        watch.AddToggle("Closed Caption", (state) => { CCManager.Instance.gameObject.SetActive(state); });
+        watch.AddButton("Reset Position", () =>
+        {
+            startObject.GetComponent<Transform>().position = resetPosition;
+            startObject.GetComponent<Transform>().rotation = resetRotation;
+        });
+        watch.AddButton("Back to Lobby", () =>
+        {
+            SceneManager.LoadScene("Lobby Level Scene");
+        });
 
         LeftUILineRenderer.SetActive(false);
         RightUILineRenderer.SetActive(false);
