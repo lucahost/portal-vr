@@ -31,7 +31,7 @@ public class WitchHouseUIHook : WatchScript.IUIHook
         });
         watch.AddButton("Back to Lobby", () =>
         {
-            SceneManager.LoadScene("Lobby Level Scene");
+            SceneManager.LoadScene("Lobby");
         });
 
         LeftUILineRenderer.SetActive(false);
