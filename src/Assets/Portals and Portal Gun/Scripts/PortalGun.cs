@@ -30,15 +30,10 @@ public class PortalGun : MonoBehaviour
     public Animator animator;
 
     private AudioSource audioSource;
-    private XRRayInteractor rayParent;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        rayParent = gameObject.transform.parent.transform.parent.GetComponent<XRRayInteractor>();
-
-        print("parentRay");
-        print(rayParent);
     }
 
     private List<InputDevice> GetGameControllers()
@@ -48,15 +43,7 @@ public class PortalGun : MonoBehaviour
 
         var gameControllers = new List<InputDevice>();
         InputDevices.GetDevicesWithRole(InputDeviceRole.LeftHanded, gameControllers);
-
-        // foreach (var device in gameControllers)
-        // {
-        //     print("device found: ");
-        //     print("--> " + device);
-        //     print("--> " + device.name);
-        //     print("--> " + device.role.ToString());
-        // }
-
+        
         return gameControllers;
     }
     private bool IsTriggerPressed(InputDevice gameController)
@@ -77,19 +64,14 @@ public class PortalGun : MonoBehaviour
         if (gameControllers.Count <= 0)
             return;
         var gameController = gameControllers[0];
-        print("Test");
 
         if (IsTriggerPressed(gameController) || IsGripButtonPressed(gameController))
         {
-            print("Trigger OR Grip button is pressed.");
             
             RaycastHit hit;
             bool isPortalAvailable = false;
-
-            // is hitting cameria!! an so not working
-            // Ray ray = new Ray(transform.position, transform.forward);
-            Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f));
-
+            Ray ray = new Ray(transform.position, -transform.forward );
+            
             if (Physics.Raycast(ray, out hit))
             {
                 if (portalLayers == (portalLayers | (1 << hit.collider.gameObject.layer)))
