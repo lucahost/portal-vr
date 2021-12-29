@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 1033325301}
   - component: {fileID: 1033325300}
   - component: {fileID: 1033325299}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -598,6 +598,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Room_Modern_Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654047607300001400, guid: 57d051852908fe8428a73d0f980dc96d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57d051852908fe8428a73d0f980dc96d, type: 3}
@@ -1075,7 +1080,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ModelPrefab
       value: 
-      objectReference: {fileID: 7557956550680848218}
+      objectReference: {fileID: 9035930325578515838, guid: ee8716783b448ad44bb68330de59920b,
+        type: 3}
+    - target: {fileID: 4414000316460270192, guid: 52142baa8bba91e40aabc3814af581b0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4414000316920920352, guid: 52142baa8bba91e40aabc3814af581b0,
         type: 3}
       propertyPath: m_ModelPrefab

@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 /// <summary>
 /// Main class for portal gun
@@ -26,55 +30,91 @@ public class PortalGun : MonoBehaviour
     public Animator animator;
 
     private AudioSource audioSource;
- 
+    private XRRayInteractor rayParent;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        rayParent = gameObject.transform.parent.transform.parent.GetComponent<XRRayInteractor>();
+
+        print("parentRay");
+        print(rayParent);
+    }
+
+    private List<InputDevice> GetGameControllers()
+    {
+        var inputDevices = new List<InputDevice>();
+        InputDevices.GetDevices(inputDevices);
+
+        var gameControllers = new List<InputDevice>();
+        InputDevices.GetDevicesWithRole(InputDeviceRole.LeftHanded, gameControllers);
+
+        // foreach (var device in gameControllers)
+        // {
+        //     print("device found: ");
+        //     print("--> " + device);
+        //     print("--> " + device.name);
+        //     print("--> " + device.role.ToString());
+        // }
+
+        return gameControllers;
+    }
+    private bool IsTriggerPressed(InputDevice gameController)
+    {
+        return gameController
+                   .TryGetFeatureValue(CommonUsages.triggerButton, out var triggerButtonValue) &&
+               triggerButtonValue;
+    }
+
+    private bool IsGripButtonPressed(InputDevice gameController)
+    {
+        return gameController.TryGetFeatureValue(CommonUsages.gripButton, out var triggerValue) && triggerValue;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            animator.SetTrigger("Reset");
-            audioSource.PlayOneShot(resetClip);
-            RemovePortals(true, true);
-        }
+        var gameControllers = GetGameControllers();
+        if (gameControllers.Count <= 0)
+            return;
+        var gameController = gameControllers[0];
+        print("Test");
 
-        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+        if (IsTriggerPressed(gameController) || IsGripButtonPressed(gameController))
         {
-            Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+            print("Trigger OR Grip button is pressed.");
+            
             RaycastHit hit;
             bool isPortalAvailable = false;
+
+            // is hitting cameria!! an so not working
+            // Ray ray = new Ray(transform.position, transform.forward);
+            Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 
             if (Physics.Raycast(ray, out hit))
             {
                 if (portalLayers == (portalLayers | (1 << hit.collider.gameObject.layer)))
                     isPortalAvailable = true;
-                    
+
                 animator.SetTrigger("Shoot");
                 audioSource.PlayOneShot(shootClip);
 
-                if (Input.GetMouseButtonDown(0) && isBlueAvailable)
+                if (IsTriggerPressed(gameController) && isBlueAvailable)
                 {
                     if (isPortalAvailable)
                     {
                         RemovePortals(true, false);
                         CreatePortal(bluePortalPrefab, hit.point, hit.normal);
-
                         gunColorfulPart.material = blueColorMat;
                     }
 
                     CreateBeam(hit.point, blueColorMat);
                 }
-                else if(Input.GetMouseButtonDown(1) && isOrangeAvailable)
+                else if (IsGripButtonPressed(gameController) && isOrangeAvailable)
                 {
                     if (isPortalAvailable)
                     {
                         RemovePortals(false, true);
                         CreatePortal(orangePortalPrefab, hit.point, hit.normal);
-
                         gunColorfulPart.material = orangeColorMat;
                     }
 
@@ -83,7 +123,7 @@ public class PortalGun : MonoBehaviour
             }
         }
     }
-    
+
     /// <summary>
     /// Create portal at the ray hit point
     /// </summary>
