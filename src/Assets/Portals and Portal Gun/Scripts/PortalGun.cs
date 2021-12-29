@@ -43,9 +43,10 @@ public class PortalGun : MonoBehaviour
 
         var gameControllers = new List<InputDevice>();
         InputDevices.GetDevicesWithRole(InputDeviceRole.LeftHanded, gameControllers);
-        
+
         return gameControllers;
     }
+
     private bool IsTriggerPressed(InputDevice gameController)
     {
         return gameController
@@ -67,39 +68,29 @@ public class PortalGun : MonoBehaviour
 
         if (IsTriggerPressed(gameController) || IsGripButtonPressed(gameController))
         {
-            
             RaycastHit hit;
-            bool isPortalAvailable = false;
-            Ray ray = new Ray(transform.position, -transform.forward );
-            
+            Ray ray = new Ray(transform.position, -transform.forward);
+
             if (Physics.Raycast(ray, out hit))
             {
-                if (portalLayers == (portalLayers | (1 << hit.collider.gameObject.layer)))
-                    isPortalAvailable = true;
+                if (!(portalLayers == (portalLayers | (1 << hit.collider.gameObject.layer))))
+                    return;
 
                 animator.SetTrigger("Shoot");
                 audioSource.PlayOneShot(shootClip);
 
                 if (IsTriggerPressed(gameController) && isBlueAvailable)
                 {
-                    if (isPortalAvailable)
-                    {
-                        RemovePortals(true, false);
-                        CreatePortal(bluePortalPrefab, hit.point, hit.normal);
-                        gunColorfulPart.material = blueColorMat;
-                    }
-
+                    RemovePortals(true, false);
+                    CreatePortal(bluePortalPrefab, hit.point, hit.normal);
+                    gunColorfulPart.material = blueColorMat;
                     CreateBeam(hit.point, blueColorMat);
                 }
                 else if (IsGripButtonPressed(gameController) && isOrangeAvailable)
                 {
-                    if (isPortalAvailable)
-                    {
-                        RemovePortals(false, true);
-                        CreatePortal(orangePortalPrefab, hit.point, hit.normal);
-                        gunColorfulPart.material = orangeColorMat;
-                    }
-
+                    RemovePortals(false, true);
+                    CreatePortal(orangePortalPrefab, hit.point, hit.normal);
+                    gunColorfulPart.material = orangeColorMat;
                     CreateBeam(hit.point, orangeColorMat);
                 }
             }
