@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -73,6 +74,7 @@ public class PortalGun : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
+                // check if hit-layer is in portalLayer with bitwise-operator for performance
                 if (!(portalLayers == (portalLayers | (1 << hit.collider.gameObject.layer))))
                     return;
 
