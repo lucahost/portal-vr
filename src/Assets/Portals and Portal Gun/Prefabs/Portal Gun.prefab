@@ -2478,6 +2478,9 @@ MonoBehaviour:
   portalLayers:
     serializedVersion: 2
     m_Bits: 1024
+  invisibleLayers:
+    serializedVersion: 2
+    m_Bits: 8192
   isOrangeAvailable: 1
   isBlueAvailable: 1
   gunColorfulPart: {fileID: 9035930325580810080}

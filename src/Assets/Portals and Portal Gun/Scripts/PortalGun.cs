@@ -22,6 +22,7 @@ public class PortalGun : MonoBehaviour
     public GameObject beamPrefab;
 
     public LayerMask portalLayers;
+    public LayerMask invisibleLayers;
 
     public bool isOrangeAvailable = true;
     public bool isBlueAvailable = true;
@@ -72,7 +73,7 @@ public class PortalGun : MonoBehaviour
             RaycastHit hit;
             Ray ray = new Ray(transform.position, -transform.forward);
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, 1000f, (13 |  portalLayers)))
             {
                 // check if hit-layer is in portalLayer with bitwise-operator for performance
                 if (!(portalLayers == (portalLayers | (1 << hit.collider.gameObject.layer))))
