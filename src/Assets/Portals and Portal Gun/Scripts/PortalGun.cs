@@ -22,6 +22,7 @@ public class PortalGun : MonoBehaviour
     public GameObject beamPrefab;
 
     public LayerMask portalLayers;
+    public LayerMask invisibleLayers;
 
     public bool isOrangeAvailable = true;
     public bool isBlueAvailable = true;
@@ -72,7 +73,7 @@ public class PortalGun : MonoBehaviour
             RaycastHit hit;
             Ray ray = new Ray(transform.position, -transform.forward);
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, 1000f, (13 |  portalLayers)))
             {
                 // check if hit-layer is in portalLayer with bitwise-operator for performance
                 if (portalLayers != (portalLayers | (1 << hit.collider.gameObject.layer)))
@@ -84,14 +85,14 @@ public class PortalGun : MonoBehaviour
                 if (IsTriggerPressed(gameController) && isBlueAvailable)
                 {
                     RemovePortals(true, false);
-                    CreatePortal(bluePortalPrefab, hit.point, hit.normal);
+                    CreatePortal(bluePortalPrefab, hit.point, hit.normal, hit.collider.gameObject);
                     gunColorfulPart.material = blueColorMat;
                     CreateBeam(hit.point, blueColorMat);
                 }
                 else if (IsGripButtonPressed(gameController) && isOrangeAvailable)
                 {
                     RemovePortals(false, true);
-                    CreatePortal(orangePortalPrefab, hit.point, hit.normal);
+                    CreatePortal(orangePortalPrefab, hit.point, hit.normal, hit.collider.gameObject);
                     gunColorfulPart.material = orangeColorMat;
                     CreateBeam(hit.point, orangeColorMat);
                 }
@@ -105,9 +106,9 @@ public class PortalGun : MonoBehaviour
     /// <param name="prefab"></param>
     /// <param name="position"></param>
     /// <param name="rotation"></param>
-    private void CreatePortal(GameObject prefab, Vector3 position, Vector3 rotation)
+    private void CreatePortal(GameObject prefab, Vector3 position, Vector3 rotation, GameObject gameObject)
     {
-        var portal = Instantiate(prefab, position, Quaternion.LookRotation(rotation));
+        var portal = Instantiate(prefab, position, Quaternion.LookRotation(rotation, gameObject.transform.forward));
         portal.transform.position += portal.transform.forward * 0.6f;
         portal.GetComponent<Portal>().Open();
     }

@@ -22,8 +22,8 @@ TagManager:
   - Teleporter
   - NoHandCollide
   - Teleporting
-  - portalLayers
-  - 
+  - InvisibleWall
+  - DeathFloor
   - 
   - 
   - 
