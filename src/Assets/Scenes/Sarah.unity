@@ -2130,6 +2130,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4414000315789495854, guid: 52142baa8bba91e40aabc3814af581b0,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4414000316460270156, guid: 52142baa8bba91e40aabc3814af581b0,
         type: 3}
       propertyPath: m_ValidColorGradient.atime1
@@ -2407,7 +2412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerCharacteristics: 256
-  handModelPrefab: {fileID: 109434732395284509, guid: 2e7700e8998a9fb47bfe9ad58289b392,
+  handModelPrefab: {fileID: 109434732395284509, guid: b2818f8227468394580fe53d6d2a24b5,
     type: 3}
 --- !u!1001 &7792869421932459891
 PrefabInstance:

@@ -75,7 +75,7 @@ public class PortalGun : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 // check if hit-layer is in portalLayer with bitwise-operator for performance
-                if (!(portalLayers == (portalLayers | (1 << hit.collider.gameObject.layer))))
+                if (portalLayers != (portalLayers | (1 << hit.collider.gameObject.layer)))
                     return;
 
                 animator.SetTrigger("Shoot");

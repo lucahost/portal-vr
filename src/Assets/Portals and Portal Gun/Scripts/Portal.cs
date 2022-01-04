@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Rendering;
 
 /// <summary>
 /// Main portal class
@@ -13,7 +14,7 @@ public class Portal : MonoBehaviour
 
     void Update()
     {
-        if (isReady)
+        if (isReady && secondPortal != null)
         {
             // Position
             Vector3 lookerPosition = secondPortal.transform.worldToLocalMatrix.MultiplyPoint3x4(Camera.main.transform.position);
@@ -26,6 +27,10 @@ public class Portal : MonoBehaviour
 
             // Clipping
             selfCamera.nearClipPlane = lookerPosition.magnitude;
+        }
+        else
+        {
+            Open();
         }
     }
 
@@ -40,7 +45,9 @@ public class Portal : MonoBehaviour
             secondPortal.SetCamera();
         }
         else
+        {
             GetComponentInChildren<MeshRenderer>().sharedMaterial.mainTexture = defaultTexture;
+        }
     }
 
     /// <summary>
@@ -49,8 +56,11 @@ public class Portal : MonoBehaviour
     private void SetCamera()
     {
         secondPortal = GameObject.FindGameObjectWithTag(isOrange ? "Blue Portal" : "Orange Portal").GetComponent<Portal>();
+        secondPortal.selfCamera.stereoTargetEye = StereoTargetEyeMask.Both;
         secondPortal.selfCamera.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
-        GetComponentInChildren<MeshRenderer>().sharedMaterial.mainTexture = secondPortal.selfCamera.targetTexture;
+        var mainTexture = GetComponentInChildren<MeshRenderer>().sharedMaterial.mainTexture;
+        mainTexture = secondPortal.selfCamera.targetTexture;
+        mainTexture.dimension = TextureDimension.Tex2D;
 
         isReady = true;
     }
@@ -104,7 +114,6 @@ public class Portal : MonoBehaviour
             obj.rotation = difference * obj.rotation;
 
             obj.GetComponent<Rigidbody>().velocity *= -1;
-            obj.GetComponent<Rigidbody>().useGravity = true;
         }
     }
 
@@ -124,7 +133,7 @@ public class Portal : MonoBehaviour
     /// </summary>
     private void OnTriggerExit(Collider other)
     {
-        other.GetComponent<Rigidbody>().useGravity = true;
+        other.GetComponent<Rigidbody>().useGravity = true;        
         other.gameObject.layer = LayerMask.NameToLayer("Player");
     }
 }
