@@ -79,14 +79,15 @@ public class PortalGun : MonoBehaviour
                 if (IsTriggerPressed(gameController) && isBlueAvailable)
                 {
                     RemovePortals(true, false);
-                    CreatePortal(bluePortalPrefab, hit.point, hit.normal, hit.collider.gameObject);
+                    CreatePortal(bluePortalPrefab, hit.point, hit.normal, hit.collider.gameObject, 0.6f);
                     gunColorfulPart.material = blueColorMat;
                     CreateBeam(hit.point, blueColorMat);
                 }
                 else if (IsGripButtonPressed(gameController) && isOrangeAvailable)
                 {
                     RemovePortals(false, true);
-                    CreatePortal(orangePortalPrefab, hit.point, hit.normal, hit.collider.gameObject);
+                    var rot = hit.normal * -1;
+                    CreatePortal(orangePortalPrefab, hit.point, rot, hit.collider.gameObject, -0.6f);
                     gunColorfulPart.material = orangeColorMat;
                     CreateBeam(hit.point, orangeColorMat);
                 }
@@ -100,12 +101,13 @@ public class PortalGun : MonoBehaviour
     /// <param name="prefab"></param>
     /// <param name="position"></param>
     /// <param name="rotation"></param>
-    private void CreatePortal(GameObject prefab, Vector3 position, Vector3 rotation, GameObject gameObject)
+    private void CreatePortal(GameObject prefab, Vector3 position, Vector3 rotation, GameObject gameObject, float offset)
     {
         Quaternion lookRotation = Quaternion.LookRotation(rotation, gameObject.transform.up);
         // lookRotation.z = 0;
         var portal = Instantiate(prefab, position, lookRotation);
-        portal.transform.position += portal.transform.forward * 0.6f;
+        portal.transform.position += portal.transform.forward * offset;
+
         portal.GetComponent<Portal>().Open();
     }
 

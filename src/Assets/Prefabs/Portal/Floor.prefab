@@ -94,7 +94,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &1095417801583923057
@@ -117,8 +117,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 4294967295
   m_SelectMode: 0
-  m_CustomReticle: {fileID: 8656087483511947524, guid: 16b1cce1f9e90b84fab5942513ac1262,
-    type: 3}
+  m_CustomReticle: {fileID: 8656087483511947524, guid: 16b1cce1f9e90b84fab5942513ac1262, type: 3}
   m_FirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []

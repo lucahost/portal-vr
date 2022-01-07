@@ -294,10 +294,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f1772ca2db4a54a9b8450fe6c9a0d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkedPortal: {fileID: 0}
+  screen: {fileID: 580283322376129754}
+  recursionLimit: 5
+  nearClipOffset: 0.05
+  nearClipLimit: 0.2
   isOrange: 0
-  secondPortal: {fileID: 0}
-  selfCamera: {fileID: 1510369340211132256}
-  defaultTexture: {fileID: 2800000, guid: 84032070c01e2e04e88fa0e2ab533296, type: 3}
 --- !u!95 &3743706048315822668
 Animator:
   serializedVersion: 3
