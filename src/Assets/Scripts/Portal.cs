@@ -95,14 +95,14 @@ public class Portal : MonoBehaviour
         Destroy(gameObject, 0.5f);
     }
 
-    
+
     /// <summary>
     /// Trigger teleporting process
     /// </summary>
     private void OnTriggerStay(Collider other)
     {
         float zPos = transform.worldToLocalMatrix.MultiplyPoint3x4(other.transform.position).z;
-        
+
         // other.GetComponent<Rigidbody>().useGravity = false;
 
         if (zPos < 0 && !_isTeleporting && other.gameObject.layer == LayerMask.NameToLayer("Player"))
@@ -113,7 +113,7 @@ public class Portal : MonoBehaviour
         }
     }
 
-    
+
 
     /// <summary>
     /// Teleport player to the second portal
@@ -122,11 +122,12 @@ public class Portal : MonoBehaviour
     {
         if (obj != null && secondPortal != null)
         {
+#if DEBUG
             print(obj.ToString());
             print(isOrange ? "Teleporting from orange to blue" : "blue to orange");
             print(secondPortal.transform.position.ToString());
             print(secondPortal.ToString());
-
+#endif
 
             Vector3 localPos = transform.worldToLocalMatrix.MultiplyPoint3x4(obj.position);
             localPos = new Vector3(-localPos.x, localPos.y, -localPos.z);
@@ -136,18 +137,6 @@ public class Portal : MonoBehaviour
             difference.x = 0;
             difference.z = 0;
             obj.rotation = difference * obj.rotation;
-            //obj.position +=  Vector3.back * 1.5f;
-           
-           
-            //obj.position = secondPortal.transform.position;
-            //Quaternion difference = secondPortal.transform.rotation * Quaternion.Inverse(transform.rotation * Quaternion.Euler(0, 180, 0));
-            //difference.x = 0;
-            //difference.z = 0;
-            //obj.rotation = difference * obj.rotation;
-            //obj.position +=  Vector3.back * 1.5f;
-
-            
-            _isTeleporting = false;
         }
     }
 
