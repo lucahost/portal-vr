@@ -30,7 +30,7 @@
 - portal-Gun
 - portal "orange"
 - portal "blue"
-- exit (waiting, finish)
+- doors
 
 #### only drawn - static objects
 
@@ -40,5 +40,4 @@
 
 #### only update
 
-- time-counter
 - camera

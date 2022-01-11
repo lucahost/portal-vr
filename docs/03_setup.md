@@ -4,9 +4,14 @@
 
 Make sure that you have Unity Hub and the LTS Unity Editor downloaded and installed
 
+
+![unity](../docs/images/unity.png)
+
 [`Unity`](https://unity3d.com/get-unity/download)
 
 To run the app on the oculus quest 2 make sure that you have the latest Oculus Developer Hub Installed
+
+![oculus_quest_2](../docs/images/oculus_quest_2.png)
 
 Follow the instructions here [`Oculus`](https://developer.oculus.com/downloads/unity/) to download [Oculus Developer Hub (Win)](https://developer.oculus.com/downloads/package/oculus-developer-hub-win/) / [Oculus Developer Hub (Mac)](https://developer.oculus.com/downloads/package/oculus-developer-hub-mac)
 
