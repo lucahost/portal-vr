@@ -1,25 +1,27 @@
 # Portal VR
 
-![portal-image](./docs/images/portal_orange.png)
+![portal-blue-image](./docs/images/portal_blue.png)
 
 Our game project for the course GameDev (HS 21/22)
 
-## [General](./docs/00_general.md)
+## [General](./docs/01_general.md)
 
-## [Setup](./docs/10_setup.md)
+## [Project Management](./docs/02_project-management.md)
 
-## [Requirements](./docs/20_requirements.md)
+## [Setup](./docs/03_setup.md)
 
-## [Risks](./docs/30_risks.md)
+## [Requirements](./docs/04_requirements.md)
 
-## [Design](./docs/40_design.md)
+## [Risks](./docs/05_risks.md)
 
-## [Development](./docs/50_development.md)
+## [Design](./docs/06_design.md)
 
-## [Test](docs/60_test.md)
+## [Sketches](docs/07_sketches.md)
 
-## [Sketches](docs/70_sketches.md)
+## [Game-Objects](docs/08_game_objects.md)
 
-## [Links](./docs/90_links.md)
+## [Closing Words](./docs/09_closing_words.md)
 
-## [Todo / Tasks](./docs/99_todo.md)
+## [Links](./docs/99_links.md)
+
+![portal-orange-image](./docs/images/portal_orange.png)

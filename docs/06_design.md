@@ -8,19 +8,17 @@
 
 - VR-Controller
 - VR-Sensors
-- GPS Information (for area-control)
 
 #### outputs
 
 - graphics
-- audio (if there is enough time)
-- music (DOOM)
-- "rumble" effect on controller
-- game-data to watch on mobile phone
+- audio (Pew Pew, DOOM)
+- <del>"rumble" effect on controller</del>
+- <del>game-data to watch on mobile phone</del>
 
 ### Time
 
-- a counter measures the time (seconds) needed for a level
+- <del>a timer to measures the time (seconds) needed for a level</del>
 
 ### Game Objects
 
@@ -31,12 +29,13 @@
 - portal "orange"
 - portal "blue"
 - doors
+- wristwatch-menu
 
 #### only drawn - static objects
 
 - room
 - obstacles
-- death zone
+- deathzone
 
 #### only update
 

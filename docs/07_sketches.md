@@ -6,7 +6,7 @@
 
 Flying menu on one side of each level.
 
-![menu-proto](./images/menu_proto.jpeg)
+<img src="./images/menu_proto.jpeg" height="300">
 
 Pros: 
 - easy to use
@@ -18,9 +18,9 @@ Cons:
 
 ### Menu as Watch
 
-Menu wrapt in a wristwatch, whitch pops out when looking at it.
+Menu wrapt in a wristwatch, which pops out when looking at it.
 
-Pors: 
+Pros: 
 - user can reach it at any time
 - fancy
 
@@ -34,6 +34,6 @@ We have decided to implement the wristwatch. The template already exists which s
 
 A level will look something like this. A floor with four walls to keep in player in its place.
 
-![room-level](./images/basic_room.jpeg)
+<img src="./images/basic_room.jpeg" height="300">
 
 

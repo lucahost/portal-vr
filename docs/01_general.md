@@ -24,7 +24,7 @@ The aim of the game is to cross each room and reach the respective exit.
 ### Out of scope
 - Turrets as NPCs
 - Movable and draggable Objects
-- controllable oder portable Beams
+- Controllable oder portable laser
 - Multiplayer (Network)
 - Keyboard / Mouse support
 
@@ -35,21 +35,19 @@ This project is being done as part of the GameDev semester at the FFHS.
 | ---- | ---- | ---- |
 | linear algebra | portal-guns | ✅ |
 | 2D or 3D graphics | room | ✅ |
-| AI | - | ❌ |
-| simulation | movement, collision, momentum | ✅ |
+| AI | Sentry Turrets | ❌ |
+| locomotion | movement, collision, momentum | ✅ |
 | user interface | start-screen, choose level, exit | ✅ |
-| distributed games | - | ❌ |
-| design patterns | code | we try |
+| distributed games | networking | ❌ |
 
 
 ### Organisation
 
 | Role | Name |
 | ---- |----|
-| Customer | Ilir Fetai |
-| Developer / Project Manager |Luca Hofstettler|
+| Developer / Project Manager |Luca Hostettler|
 | Developer / Project Manager | Sarah Hasler |
 
 ### Management
 
-[Link to Todo](./99_todos.md)
+[Link to Todo](./02_project-management.md)
